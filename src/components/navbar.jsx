@@ -14,7 +14,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
-
 const drawerWidth = 240;
 const navItems = ['Project', 'About', 'Contact', 'Skills'];
 
@@ -34,7 +33,7 @@ export default function Navbar() {
             <List>
                 {navItems.map((item) => (
                     <ListItem key={item} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center'}}>
+                        <ListItemButton sx={{ textAlign: 'center', color: 'black'}}>
                             <ListItemText primary={item} />
                         </ListItemButton>
                     </ListItem>
@@ -46,7 +45,7 @@ export default function Navbar() {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar component="nav" sx={{ backgroundColor: 'black' }}>
+            <AppBar component="nav" sx={{ backgroundColor: 'white' }}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -61,13 +60,14 @@ export default function Navbar() {
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, 
                             fontSize: '2rem', padding: '10px', 
                             fontWeight: '900', 
-                            fontFamily: "'Satisfy', cursive" }}>
+                            fontFamily: "'Satisfy', cursive",
+                            color: 'black'}}>
                         Alen John
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
-                            <Button key={item} sx={{ color: '#fff', fontSize: '1.2rem', padding: '25px', 
-                            fontWeight: '200', 
+                            <Button key={item} sx={{ color: 'black', fontSize: '1.2rem', padding: '25px', 
+                            fontWeight: 'bold', 
                             fontFamily: "'Oswald', sans-serif" }}>
                                 {item}
                             </Button>
@@ -93,7 +93,6 @@ export default function Navbar() {
             </nav>
             <Box component="main" sx={{ p: 0 }}>
                 <Toolbar />
-
             </Box>
         </Box>
     );

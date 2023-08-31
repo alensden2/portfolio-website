@@ -1,8 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './Pages/home';
+import './App.css';
 import About from './Pages/about';
+import Contact from './Pages/contact';
+import Home from './Pages/home';
 import Skills from './Pages/skills';
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/skills' element={<Skills />} />
+          <Route path='/contact' element={<Contact />} />
         </Routes>
       </BrowserRouter>
     </>
