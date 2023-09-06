@@ -11,6 +11,7 @@ const ProjectStats = () => {
     const [userRepos, setUserRepos] = useState([]);
 
     useEffect(() => {
+        console.log(authToken)
         axios
             .get('https://api.github.com/users/alensden2')
             .then((response) => {
