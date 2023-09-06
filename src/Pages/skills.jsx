@@ -62,7 +62,7 @@ export default function Skills() {
                         sx={{ fontSize: '4rem', paddingBottom: '20px', fontWeight: 'bold' }}
                         variant="h3"
                     >
-                        Some of My Skills
+                        Top Skills
                     </Typography>
 
                     <div

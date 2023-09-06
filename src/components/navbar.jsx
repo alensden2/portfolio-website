@@ -13,16 +13,21 @@ import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const drawerWidth = 240;
 const navItems = ['Project', 'About', 'Contact', 'Skills'];
-
 export default function Navbar() {
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const navigate = useNavigate();
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
     };
+
+    const handleNavbarClick = (item) => {
+        navigate('/' + item)
+    }
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
@@ -33,7 +38,7 @@ export default function Navbar() {
             <List>
                 {navItems.map((item) => (
                     <ListItem key={item} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center', color: 'black'}}>
+                        <ListItemButton sx={{ textAlign: 'center', color: 'black' }}>
                             <ListItemText primary={item} />
                         </ListItemButton>
                     </ListItem>
@@ -56,19 +61,24 @@ export default function Navbar() {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" component="div" 
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, 
-                            fontSize: '2rem', padding: '10px', 
-                            fontWeight: '900', 
+                    <Typography variant="h6" component="div"
+                        sx={{
+                            flexGrow: 1, display: { xs: 'none', sm: 'block' },
+                            fontSize: '2rem', padding: '10px',
+                            fontWeight: '900',
                             fontFamily: "'Satisfy', cursive",
-                            color: 'black'}}>
+                            color: 'black'
+                        }}>
                         Alen John
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
-                            <Button key={item} sx={{ color: 'black', fontSize: '1.2rem', padding: '25px', 
-                            fontWeight: 'bold', 
-                            fontFamily: "'Oswald', sans-serif" }}>
+                            <Button key={item} sx={{
+                                color: 'black', fontSize: '1.2rem', padding: '25px',
+                                fontWeight: 'bold',
+                                fontFamily: "'Oswald', sans-serif"
+                            }} onClick={() => handleNavbarClick(item)}
+                            >
                                 {item}
                             </Button>
                         ))}
@@ -81,7 +91,7 @@ export default function Navbar() {
                     open={mobileOpen}
                     onClose={handleDrawerToggle}
                     ModalProps={{
-                        keepMounted: true, 
+                        keepMounted: true,
                     }}
                     sx={{
                         display: { xs: 'block', sm: 'none' },

@@ -3,8 +3,10 @@ import { useSpring, animated } from 'react-spring';
 import Navbar from '../components/navbar';
 import BackgroundImage from '../assets/background.jpg';
 import ProfileImage from '../assets/Aj.jpeg';
-import { Box, Typography, Container, Grid, Paper } from '@mui/material';
+import { Box, Typography, Container, Grid, Paper, Avatar, IconButton } from '@mui/material';
 import Footer from '../components/footer';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 export default function About() {
     const contentAnimation = useSpring({
@@ -52,18 +54,28 @@ export default function About() {
                                             fontSize: '3.5rem',
                                             fontWeight: 'bold',
                                             paddingBottom: '20px',
-                                            fontFamily: "'Victor Mono', monospace",
+                                            fontFamily: 'Playfair Display, serif', // Updated font
                                         }}
                                         variant="h1"
                                     >
                                         Greetings!
                                     </Typography>
                                     <Typography
-                                        sx={{ fontFamily: "'Victor Mono', monospace" }}
+                                        sx={{
+                                            fontFamily: 'Raleway, sans-serif', // Updated font
+                                        }}
                                         variant="h5"
                                     >
-                                        I am Alen John, pursuing my Master of Applied Computer Science from Dalhousie University, Halifax. With over a year of full-time experience as a full-stack software engineer, I specialize in Angular, SQL Server, and .NET.
+                                        I'm Alen John, a passionate software engineer based in Halifax, Nova Scotia. I'm currently pursuing my Master of Applied Computer Science at Dalhousie University. With over a year of full-time experience, I specialize in Angular, SQL Server, and .NET.
                                     </Typography>
+                                    <Box mt={3}>
+                                        <IconButton href="https://www.linkedin.com/in/your-linkedin-profile/" target="_blank" rel="noopener noreferrer" color="primary">
+                                            <LinkedInIcon fontSize="large" />
+                                        </IconButton>
+                                        <IconButton href="https://github.com/your-github-profile" target="_blank" rel="noopener noreferrer" color="primary">
+                                            <GitHubIcon fontSize="large" />
+                                        </IconButton>
+                                    </Box>
                                 </Paper>
                             </animated.div>
                         </Grid>
@@ -72,16 +84,19 @@ export default function About() {
                                 <Box
                                     sx={{
                                         textAlign: 'center',
+                                        borderRadius: '50%',
+                                        overflow: 'hidden',
+                                        width: '250px',
+                                        height: '250px',
+                                        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
                                     }}
                                 >
-                                    <img
-                                        src={ProfileImage}
+                                    <Avatar
                                         alt="Profile"
-                                        style={{
-                                            width: '300px',
-                                            height: '300px',
-                                            borderRadius: '50%',
-                                            boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)',
+                                        src={ProfileImage}
+                                        sx={{
+                                            width: '100%',
+                                            height: '100%',
                                         }}
                                     />
                                 </Box>
